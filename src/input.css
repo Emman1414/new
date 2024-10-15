@@ -129,7 +129,7 @@
 
   /* BUTTONS */
   .btn {
-    @apply py-2 px-4 bg-transparent border-transparent rounded-xl shadow-[0_8px_24px__15px_rgba(149,157,165,0.2)];
+    @apply py-2 px-4 bg-transparent border-transparent rounded-xl shadow-[0px_8px_24px__15px_rgba(149,157,165,0.2)];
   }
   .btn.bg-primaryy {
     @apply bg-primary border-2 border-primary text-white hover:bg-transparent hover:text-black;
