@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* BASE */
+@layer base {
+  body {
+    @apply font-raleway overflow-x-hidden;
+  }
+  .container {
+    @apply max-w-[1600px] w-full px-4 mx-auto;
+  }
+  h1 {
+    @apply text-[70px];
+  }
+  h2 {
+    @apply text-[33px];
+  }
+  h3 {
+    @apply text-[24px];
+  }
+  h4 {
+    @apply text-[16px];
+  }
+  h5 {
+    @apply text-[12px];
+  }
+  h6 {
+    @apply text-[10px];
+  }
+  p {
+    @apply text-[16px];
+  }
+}
+
+/* COMPONENTS */
+
+@layer components {
+  /* HEADER */
+
+  .header__nav.open {
+    @apply right-0 z-50 overflow-y-hidden;
+  }
+  .toggle__menu {
+    @apply flex flex-col gap-1 z-50 md:hidden lg:hidden;
+  }
+  .toggle__menu span {
+    @apply content-[*] bg-primary w-10 h-1 rounded-lg duration-700 ease-in-out;
+  }
+  .toggle__menu span:last-child {
+    @apply content-[*] bg-primary w-7 h-1 rounded-lg duration-700 ease-in-out;
+  }
+
+  .header__wrapper {
+    @apply lg:grid lg:grid;
+  }
+
+  .header__nav li {
+    @apply lg:w-[15rem];
+  }
+
+  /* FAQ */
+
+  .faq__select {
+    @apply flex flex-col justify-center items-center p-5;
+  }
+
+  .faq__select li {
+    @apply flex justify-center items-center max-w-[15rem];
+  }
+
+  /* FAQ SELECTIONS */
+
+  .faq__select li.active {
+    @apply border-b-2 border-primary text-primary;
+  }
+  .faq__details.active {
+    @apply block lg:block;
+  }
+  .faq__details {
+    @apply hidden lg:hidden lg:max-w-[50rem] lg:mx-auto;
+  }
+
+  /* FAQ CONTENTS */
+  .faq__contents {
+    @apply mb-5 max-w-[35rem] mx-auto;
+  }
+  .faq__contents h4,
+  .faq__contents i {
+    @apply bg-gray-400 text-black px-3 py-2 font-bold transition-all flex justify-between items-center cursor-pointer;
+  }
+  
+  .faq__contents h4, .faq__contents p.open{
+    @apply lg:w-[75rem];
+  }
+
+  .faq__contents i.open {
+    @apply rotate-[900deg] transition-all;
+  }
+
+  .faq__contents p {
+    @apply bg-slate-50 h-auto max-h-0 overflow-hidden transition-all text-justify;
+  }
+
+  .faq__contents p.open {
+    @apply max-h-[50rem] bg-slate-50 p-3 transition-all text-justify;
+  }
+
+  .faq .categories{
+    @apply cursor-pointer text-black hover:text-primary
+  }
+
+  /* FOOTER */
+
+  /* FOOTER TOP */
+  .footer__top img {
+    @apply w-[15rem];
+  }
+  .footer__btn a {
+    @apply lg:w-[10rem] flex justify-center;
+  }
+
+  /* FOOTER BOTTOM */
+
+  .footer__bottom {
+    @apply flex flex-col justify-center text-center mt-5 border-t-4 pt-4 border-black;
+  }
+
+  /* BUTTONS */
+  .btn {
+    @apply py-2 px-4 bg-transparent border-transparent rounded-xl shadow-[0_8px_24px__15px_rgba(149,157,165,0.2)];
+  }
+  .btn.bg-primaryy {
+    @apply bg-primary border-2 border-primary text-white hover:bg-transparent hover:text-black;
+  }
+
+  .btn.bg-secondaryy {
+    @apply bg-secondary border-2 border-secondary text-black hover:bg-transparent hover:text-primary;
+  }
+
+  .btn.bg-readmore {
+    @apply border border-primary hover:text-primary hover:bg-white;
+  }
+  .btn.bg-outline {
+    @apply bg-transparent border border-primary text-black hover:bg-primary hover:text-white;
+  }
+}
+
+/* UTILITIES */
+@layer utilities {
+}
