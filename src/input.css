@@ -40,24 +40,39 @@
   /* HEADER */
 
   .header__nav.open {
-    @apply right-0 z-50 overflow-y-hidden;
+    @apply right-0 z-50 overflow-y-hidden flex justify-start;
   }
   .toggle__menu {
-    @apply flex flex-col gap-1 z-50 md:hidden lg:hidden;
+    @apply flex flex-col gap-1 tracking-tight z-50 md:hidden lg:hidden;
   }
   .toggle__menu span {
-    @apply content-[*] bg-primary w-10 h-1 rounded-lg duration-700 ease-in-out;
+    @apply content-[*] bg-black w-10 h-1 rounded-lg duration-700 ease-in-out;
   }
   .toggle__menu span:last-child {
-    @apply content-[*] bg-primary w-7 h-1 rounded-lg duration-700 ease-in-out;
+    @apply content-[*] bg-black w-10 h-1 rounded-lg duration-700 ease-in-out;
   }
 
   .header__wrapper {
     @apply lg:grid lg:grid;
   }
-
   .header__nav li {
     @apply lg:w-[15rem];
+  }
+
+  .header__nav li a {
+    @apply hover:text-primary;
+  }
+
+  /* HEADER SPAN ARROW */
+
+  .toggle__menu.open span:first-child {
+    @apply origin-bottom-right rotate-[30deg] w-6 translate-x-3.5 translate-y-2 transition-all opacity-[100];
+  }
+  .toggle__menu.open span:nth-child(2) {
+    @apply transition-all;
+  }
+  .toggle__menu.open span:last-child {
+    @apply origin-top-right rotate-[-30deg] w-6 translate-x-3.5 translate-y-[-0.5rem] transition-all opacity-[100];
   }
 
   /* FAQ */
@@ -87,28 +102,54 @@
     @apply mb-5 max-w-[35rem] mx-auto;
   }
   .faq__contents h4,
-  .faq__contents i {
-    @apply bg-gray-400 text-black px-3 py-2 font-bold transition-all flex justify-between items-center cursor-pointer;
+  .faq__contents h4 i {
+    @apply bg-gray-200 text-black px-3 py-2 font-bold transition-all justify-between flex items-center cursor-pointer;
   }
-  
-  .faq__contents h4, .faq__contents p.open{
+
+  .faq__contents h4,
+  .faq__contents ul.open {
     @apply lg:w-[75rem];
+  }
+
+  .faq__contents li{
+    @apply mb-2;
   }
 
   .faq__contents i.open {
     @apply rotate-[900deg] transition-all;
   }
 
-  .faq__contents p {
+  /* .faq__contents p {
+    @apply bg-slate-50 h-auto max-h-0 overflow-hidden transition-all text-justify;
+  } */
+
+
+/*     <i class="fa-regular text-xs fa-circle"></i>       */
+
+
+.faq__contents i{
+  @apply text-start bg-primary rounded-full;
+}
+
+
+  /* FOR ul>li>i with green bullets */
+
+  .faq__contents ul {
     @apply bg-slate-50 h-auto max-h-0 overflow-hidden transition-all text-justify;
   }
 
-  .faq__contents p.open {
+  .faq__contents ul.open {
     @apply max-h-[50rem] bg-slate-50 p-3 transition-all text-justify;
   }
 
-  .faq .categories{
-    @apply cursor-pointer text-black hover:text-primary
+  .faq .categories {
+    @apply cursor-pointer text-black hover:text-primary;
+  }
+
+  /* FAQ Q */
+
+  .faq__contents h4 small {
+    @apply text-primary text-2xl font-semibold;
   }
 
   /* FOOTER */
@@ -119,6 +160,9 @@
   }
   .footer__btn a {
     @apply lg:w-[10rem] flex justify-center;
+  }
+  .footer__middle ul li a {
+    @apply cursor-pointer hover:text-primary hover:font-semibold;
   }
 
   /* FOOTER BOTTOM */
@@ -139,8 +183,8 @@
     @apply bg-secondary border-2 border-secondary text-black hover:bg-transparent hover:text-primary;
   }
 
-  .btn.bg-readmore {
-    @apply border border-primary hover:text-primary hover:bg-white;
+  .btn.bg-accent {
+    @apply border border-accent text-white hover:bg-blue-400;
   }
   .btn.bg-outline {
     @apply bg-transparent border border-primary text-black hover:bg-primary hover:text-white;
